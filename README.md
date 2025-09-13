@@ -1,4 +1,4 @@
-## 1. craete a loop with the linked list and found loop is created or not?
+## 1. create a loop with the linked list and found loop is created or not?
 ---
 ```c
 #include<stdio.h>
