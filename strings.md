@@ -1,5 +1,4 @@
 ## 1.print a string without duplicates
----
 ```c
 #include<stdio.h>
 #include<string.h>
