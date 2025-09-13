@@ -136,3 +136,38 @@ int main()
         printf("%s",str);
 }
 ```
+## 6.reverse the words within the sentence
+---
+```c
+#include<stdio.h>
+#include<string.h>
+void rev(char *str)
+{
+    int i;
+    
+    int n=strlen(str);
+    for(i=0;i<n/2;i++)
+    {
+    char temp=str[i];
+    str[i]=str[n-1-i];
+    str[n-1-i]=temp;
+    }
+}
+int main()
+{
+    char str[]="sushanth sai sandeep pk";
+    char add[100]=" ";
+    char res[100];
+    char *tok=strtok(str," ");
+    while(tok!=NULL)
+    {
+        rev(tok);
+        strcat(res,tok);
+        strcat(res,add);
+        tok=strtok(NULL," ");
+        
+    }
+    printf("%s",res);
+    
+}
+```
