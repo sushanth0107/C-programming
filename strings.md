@@ -112,3 +112,27 @@ int main()
         printf("%s",res);
 }
 ```
+## 5.swaping of half within the half
+---
+```c
+#include<stdio.h>
+#include<string.h>
+void swap(char *str,char *str1)
+{
+        char temp=*str
+        *str=*str1;
+        *str1=temp;
+
+}
+int main()
+{
+        int i;
+        char str[]="raviteja";
+        int l=strlen(str)/2;
+        for(i=0;i<l;i+2)
+        {
+                swap(&str[i],&str[i+1]);
+        }
+        printf("%s",str);
+}
+```
