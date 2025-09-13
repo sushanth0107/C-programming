@@ -96,3 +96,19 @@ int main()
     printf("%s",maxlen);
 }
 ```
+## 4.swaping of string by half.
+---
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+        char str[100];
+        gets(str);
+        char res[100];
+        int half=strlen(str)/2;
+        strcpy(res,str+half);
+        strncat(res,str,half);
+        printf("%s",res);
+}
+```
