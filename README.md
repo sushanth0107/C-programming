@@ -1,6 +1,6 @@
 ## 1. craete a loop with the linked list and found loop is created or not?
----c
-
+---
+```C
 #include<stdio.h>
 #include<stdlib.h>
 struct node {
@@ -102,8 +102,8 @@ int loopdetect()
         }
         return 0;
   } 
-  ---c
+  ```C
 
-        
+
 
 
