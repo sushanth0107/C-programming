@@ -180,6 +180,7 @@ void nth()
         }
         printf("pos%d  value%d",pos,ptr->data);
 }
+'''
 ## 3.reverse a linked list
 ---
 ```c
