@@ -251,7 +251,7 @@ void display()
         printf("NULL");
 }
 ```
-##4.insert a node at the middle of the linked list
+## 4.insert a node at the middle of the linked list
 ---
 ```c
 #include<stdio.h>
