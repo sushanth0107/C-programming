@@ -252,6 +252,7 @@ void display()
 }
 ```
 ##4.insert a node at the middle of the linked list
+---
 ```c
 #include<stdio.h>
 #include<stdlib.h>
