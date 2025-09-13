@@ -66,3 +66,30 @@ int main()
                 }
 }
 ```
+## 3. longest word in a sentence
+---
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="i love programming";
+    int i;
+    int max=0;
+    char maxlen[100];
+    char *tok=strtok(str," ");
+     while(tok!=NULL)
+        {
+             int len=strlen(tok);
+
+            if(len>max)
+            {
+                max=len;
+                strcpy(maxlen,tok);
+            }
+            tok=strtok(NULL," ");
+
+        }
+    printf("%s",maxlen);
+}
+```
