@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="aabbccd";
+    int i,j=0;
+    int freq[256]={0};
+    char result[100];
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(freq[str[i]]==0)
+        {
+            result[j]=str[i];
+            j++;
+        }
+        freq[str[i]]=1;
+    
+        
+        
+    }
+    result[j]='\0';
+    printf("%s",result);
+}
