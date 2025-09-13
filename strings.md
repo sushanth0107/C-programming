@@ -32,38 +32,41 @@ int main()
 #include<string.h>
 int main()
 {
-        char str[100];
+        int start=0;
+        char str[200],r;
         fgets(str,100,stdin);
+        str[strcspn(str,"\n")]='\0';
         int i,j;
         int max=0;
-        int start=0;
         for(i=0;str[i]!='\0';i++)
         {
                 int count=0;
-                char freq[256]={0};
+                char ch[256]={0};
                 for(j=i;str[j]!='\0';j++)
                 {
-                        if(freq[str[j]]==1)
+                        if(ch[str[j]]==1)
                         {
                                 break;
                         }
                         else
                         {
-                        freq[str[j]]=1;
+                        ch[str[j]]=1;
                         count++;
                         }
-                }
 
                 if(count>max)
                 {
-                   max=count;
-                    start=i;
+                        max=count;
+                         start=i;
                 }
         }
-                for(i=start;i<start+max;i++)
-                {
+        }
+        printf("%d",max);
+        for(i=start;i<start+max;i++)
+        {
                 printf("%c",str[i]);
-                }
+        }
+
 }
 ```
 ## 3. longest word in a sentence
