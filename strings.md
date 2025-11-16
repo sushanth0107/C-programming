@@ -218,7 +218,7 @@ int main()
 ```
 ## 8. remove a word in a sentence
 ---
-```
+```c
 #include<stdio.h>
 #include<string.h>
 int main()
