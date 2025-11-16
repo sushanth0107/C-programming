@@ -171,7 +171,7 @@ int main()
     
 }
 ```
-##7.max repeated word in a sentence
+## 7.max repeated word in a sentence
 ---
 ```c
 int main()
@@ -214,6 +214,34 @@ int main()
         printf("%d",count[k]);
 
 
+}
+```
+## 8. remove a word in a sentence
+---
+```
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+        char str[100];
+        char remove[100];
+        char result[100];
+        printf("enter the string");
+        fgets(str,100,stdin);
+        printf("enter the second");
+        fgets(remove,100,stdin);
+        remove[strcspn(remove,"\n")]='\0';
+
+        char *tok=strtok(str," ");
+        while(tok!=NULL)
+        {
+                if(strcmp(tok,remove)!=0)
+                {
+                        strcat(result,tok);
+                }
+                tok=strtok(NULL," ");
+        }
+        printf("%s",result);
 }
 ```
 
