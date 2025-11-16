@@ -171,3 +171,49 @@ int main()
     
 }
 ```
+##7.max repeated word in a sentence
+---
+```c
+int main()
+{
+        char str[100];
+        fgets(str,100,stdin);
+        char word[20][20];
+        int count[256]={0};
+        int i,j=0;
+        char *tok=strtok(str," ");
+        while(tok!=NULL)
+        {
+                int flag=0;
+                for(i=0;i<j;i++)
+                {
+                        if(strcmp(word[i],tok)==0)
+                        {
+                                count[i]++;
+                                flag=1;
+                                break;
+                        }
+                }
+                if(!flag)
+                {
+                        strcpy(word[j],tok);
+                        count[j]=1;
+                        j++;
+                }
+                tok=strtok(NULL," ");
+        }
+        int k=0;
+        for(i=0;i<j;i++)
+        {
+                if(count[i]>count[k])
+                {
+                        k=i;
+                }
+        }
+        printf("%s",word[k]);
+        printf("%d",count[k]);
+
+
+}
+```
+
