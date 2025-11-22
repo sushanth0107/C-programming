@@ -300,18 +300,17 @@ void addnode(int x)
 }
 void insert(int data)
 {
-        struct node *ptr,*fast=phead,*prev;
+        struct node *ptr,*fast=phead;
         struct node *slow=phead;
         ptr=malloc(sizeof(struct node));
         ptr->info=data;
         ptr->link=NULL;
-        while(fast!=NULL && fast->link!=NULL)
+        while(fast->link!=NULL && fast->link->link!=NULL)
         {
                 slow=slow->link;
-                prev=slow->link;
                 fast=fast->link->link;
         }
-        ptr->link=prev;
+        ptr->link=slow->link;
         slow->link=ptr;
 }
 void display()
