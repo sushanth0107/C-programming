@@ -244,4 +244,67 @@ int main()
         printf("%s",result);
 }
 ```
+## 9.longest common subsequence
+---
+```c
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[100];
+    fgets(str1,100,stdin);
+    char str2[100];
+    fgets(str2,100,stdin);
+    str1[strcspn(str1,"\n")]='\0';
+    str2[strcspn(str2,"\n")]='\0';
+    int l1=strlen(str1);
+    int l2=strlen(str2);
+    char arr1[100];
+    char arr2[100];
+    int i,j,k=0,l=0;
+    for(i=0;i<l1;i++)
+    {
+        for(j=0;j<l2;j++)
+        {
+            if(str1[i]==str2[j])
+            {
+                arr1[k++]=str1[i];
+                break;
+            }
+        }
+    }
+     for(i=0;i<l2;i++)
+    {
+        for(j=0;j<l1;j++)
+        {
+            if(str2[i]==str1[j])
+            {
+                arr2[l++]=str2[i];
+                break;
+            }
+        }
+    }
+    arr1[k]='\0';
+    arr2[l]='\0';
+    int g1=strlen(arr1);
+    int g2=strlen(arr2);
+    if(g1>g2)
+    {
+        if(strstr(arr1,arr2))
+        {
+            printf("%s",arr2);
+        }
+    }
+    else
+    {
+        if(strstr(arr2,arr1))
+        {
+            printf("%s",arr1);
+        }
+    }
+    
+    
+}
+```
 
