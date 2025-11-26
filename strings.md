@@ -307,4 +307,41 @@ int main()
     
 }
 ```
+## 10. common characters in astring without duplicates
+---
+```
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str1[100], str2[100], arr[100];
+    fgets(str1,100,stdin);
+    fgets(str2,100,stdin);
+
+    str1[strcspn(str1,"\n")] = '\0';
+    str2[strcspn(str2,"\n")] = '\0';
+
+    int k = 0;
+
+    for(int i = 0; str1[i] != '\0'; i++)
+    {
+        for(int j = 0; str2[j] != '\0'; j++)
+        {
+            if(str1[i] == str2[j])
+            {
+                // avoid duplicates
+                if (!strchr(arr, str1[i]))
+                    arr[k++] = str1[i];
+                break;
+            }
+        }
+    }
+
+    arr[k] = '\0';
+
+    printf("%s", arr);
+}
+```
+
 
