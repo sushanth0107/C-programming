@@ -343,5 +343,51 @@ int main()
     printf("%s", arr);
 }
 ```
+## 11.permutations of a string
+---
+```
+#include<stdio.h>
+#include<string.h>
+void swap(char str[],int i,int j)
+{
+    char temp=str[i];
+    str[i]=str[j];
+    str[j]=temp;
+}
+int main()
+{
+    printf("enter the string:");
+    char str[100];
+    fgets(str,100,stdin);
+    str[strcspn(str,"\n")]='\0';
+    printf("%s\n",str);
+    int c[100]={0};
+    int i=0;
+    int n=strlen(str);
+    while(i<n)
+    {
+        if(c[i]<i)
+        {
+            if(i%2==0)
+            {
+                swap(str,0,i);
+            }
+            else
+            {
+                swap(str,c[i],i);
+            }
+            printf("%s\n",str);
+            c[i]++;
+            i=0;
+        }
+        
+        else
+        {
+            c[i]=0;
+            i++;
+        }
+    }
+}
+```
 
 
