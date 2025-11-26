@@ -345,7 +345,7 @@ int main()
 ```
 ## 11.permutations of a string
 ---
-```
+```c
 #include<stdio.h>
 #include<string.h>
 void swap(char str[],int i,int j)
