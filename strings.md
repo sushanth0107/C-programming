@@ -5,24 +5,26 @@
 #include<string.h>
 int main()
 {
-    char str[]="aabbccd";
-    int i,j=0;
-    int freq[256]={0};
-    char result[100];
+    char str[100];
+    fgets(str,100,stdin);
+    str[strcspn(str,"\n")]='\0';
+    int i,j;
     for(i=0;str[i]!='\0';i++)
     {
-        if(freq[str[i]]==0)
+        int flag=0;
+        for(j=0;j<i;j++)
         {
-            result[j]=str[i];
-            j++;
+            if(str[i]==str[j])
+            {
+                flag=1;
+                break;
+            }
         }
-        freq[str[i]]=1;
-    
-        
-        
+        if(!flag)
+        {
+            printf("%c",str[i]);
+        }
     }
-    result[j]='\0';
-    printf("%s",result);
 }
 ```
 ## 2. longest substring without repeating
