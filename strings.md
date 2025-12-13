@@ -386,7 +386,7 @@ int main()
     }
 }
 ```
-## 11.remove spaces from a string without using another array
+## 12.remove spaces from a string without using another array
 ---
 ```c
 #include<stdio.h>
