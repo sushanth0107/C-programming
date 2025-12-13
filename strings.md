@@ -386,5 +386,29 @@ int main()
     }
 }
 ```
+## 11.remove spaces from a string without using another array
+---
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+        char str[100];
+        fgets(str,100,stdin);
+        str[strcspn(str,"\n")]='\0';
+        int i,k;
+        for(i=0;str[i];i++)
+        {
+                if(str[i]==' ')
+                {
+                        for(k=i;str[k];k++)
+                        {
+                                str[k]=str[k+1];
+                        }
+                }
+        }
+        printf("%s",str);
+}
+```
 
 
