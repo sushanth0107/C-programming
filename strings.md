@@ -410,5 +410,33 @@ int main()
         printf("%s",str);
 }
 ```
+##13.pangram or not
+---
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+        char str[100];
+        printf("enter a string :");
+        fgets(str,sizeof(str),stdin);
+        str[strcspn(str,"\n")]='\0';
+        char res[26]={0};
+        for(int i=0;str[i];i++)
+        {
+           res[str[i]-'a']=1;
+        }
+        for(int i=0;i<26;i++)
+        {
+            if(res[i]==0)
+            {
+                printf("not pangram");
+                return 0;
+            }
+        }
+        printf("pangram");
+}
+```
 
 
