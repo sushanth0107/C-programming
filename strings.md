@@ -410,7 +410,7 @@ int main()
         printf("%s",str);
 }
 ```
-##13.pangram or not
+## 13.pangram or not
 ---
 ```c
 #include<stdio.h>
