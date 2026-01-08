@@ -1,0 +1,83 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node *link;
+};
+struct node *phead;
+int addnode(int x);
+void display();
+void rem();
+void bot();
+int main()
+{
+	addnode(10);
+	addnode(20);
+	addnode(30);
+	addnode(40);
+	addnode(50);
+	display();
+	rem();
+	display();
+	bot();
+	display();
+
+}
+int  addnode(int x)
+{
+	struct node *ptr,*ptrav;
+	ptr=malloc(sizeof(struct node));
+	ptr->data=x;
+	ptr->link=NULL;
+	if(phead==NULL)
+	{
+		phead=ptr;
+	}
+	else
+	{
+	ptrav=phead;
+	while(ptrav->link!=NULL)
+	{
+		ptrav=ptrav->link;
+	}
+	ptrav->link=ptr;
+	}
+}
+void rem()
+{
+	struct node *ptrav;
+	ptrav=phead;
+	phead=ptrav->link;
+	free(ptrav);
+}
+void display()
+{
+	struct node *ptr;
+	ptr=malloc(sizeof(struct node));
+	ptr=phead;
+	while(ptr!=NULL)
+	{
+		printf("%d->",ptr->data);
+		ptr=ptr->link;
+	}
+	printf("NULL\n");
+}
+void bot()
+{
+	struct node *ptr,*ptrav,*prev;
+	ptrav=phead;
+		while(ptrav->link!=NULL)
+		{
+			prev=ptrav;
+			ptrav=ptrav->link;
+		}
+		prev->link=ptrav->link;
+		free(ptrav);
+	
+}
+
+
+
+	
+
